@@ -37,7 +37,7 @@ fi
 echo "setting up ruby"
 exec $SHELL -l
 rbenv local 2.7.0
-
+echo "Running SAM commands"
 if [ "$INPUT_SAM_COMMAND" == "build" ]; then
 		echo "Running sam build"
 		sam build
