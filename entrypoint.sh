@@ -35,7 +35,7 @@ if [ -z "$CAPABILITIES" ] && [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
     exit 1
 fi
 echo "setting up ruby"
-exec $SHELL -l
+source ~/.bash_profile
 rbenv local 2.7.0
 echo "Running SAM commands"
 if [ "$INPUT_SAM_COMMAND" == "build" ]; then
