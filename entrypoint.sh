@@ -36,6 +36,7 @@ if [ -z "$CAPABILITIES" ] && [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
 fi
 echo "setting up ruby"
 PATH=$PATH:~/.rbenv/shims
+echo ruby --version
 echo "PWD is $PWD"
 echo "contents is $(ls)"
 cd "$GITHUB_WORKSPACE"
