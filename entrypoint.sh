@@ -37,6 +37,7 @@ fi
 echo "setting up ruby"
 PATH=$PATH:~/.rbenv/shims
 echo "PWD is $PWD"
+echo "$USER"
 #echo "contents is $(ls)"
 cd "$GITHUB_WORKSPACE"
 echo "Running SAM commands"
