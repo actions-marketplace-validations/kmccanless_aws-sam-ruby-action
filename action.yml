@@ -9,4 +9,4 @@ inputs:
     description: 'AWS SAM subcommand to execute.'
     required: true
   using: 'docker'
-  image: 'docker://kmccanless/aws-sam-ruby-2-7:1.8'
+  image: 'docker://kmccanless/aws-sam-ruby-2-7:1.9'
