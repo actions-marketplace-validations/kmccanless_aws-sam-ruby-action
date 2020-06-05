@@ -37,6 +37,7 @@ if [ -z "$CAPABILITIES" ] && [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
 fi
 echo "setting up ruby"
 PATH=$PATH:~/.rbenv/shims
+gem install bundler
 echo "Running SAM commands"
 if [ "$INPUT_SAM_COMMAND" == "build" ]; then
 		echo "Running sam build"
