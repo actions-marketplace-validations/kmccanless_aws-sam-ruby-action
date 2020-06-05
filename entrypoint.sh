@@ -2,7 +2,7 @@
 
 set -e
 echo "Validating inputs"
-if [[ -z "$INPUT_SAM_COMMAND" ]]; then
+if [ -z "$INPUT_SAM_COMMAND" ]; then
     echo "AWS SAM command invalid"
     exit 1
 fi
@@ -21,7 +21,7 @@ if [[ -z "$AWS_REGION" ]]; then
     echo "AWS Region invalid"
     exit 1
 fi
-if [[ -z "$STACK_NAME" ]]; then
+if [ -z "$STACK_NAME" ] && ["$INPUT_SAM_COMMAND" == "deploy"]; then
     echo "Stack Name Invalid"
     exit 1
 fi
