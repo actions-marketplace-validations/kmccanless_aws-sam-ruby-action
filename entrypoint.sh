@@ -1,8 +1,9 @@
 #!/bin/bash
 
 set -e
+
 echo "Validating inputs"
-echo "$INPUT_SAM_COMMAND"
+
 if [ -z "$INPUT_SAM_COMMAND" ]; then
     echo "AWS SAM command invalid"
     exit 1
@@ -36,10 +37,6 @@ if [ -z "$CAPABILITIES" ] && [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
 fi
 echo "setting up ruby"
 PATH=$PATH:~/.rbenv/shims
-echo "PWD is $PWD"
-echo "$USER"
-#echo "contents is $(ls)"
-cd "$GITHUB_WORKSPACE"
 echo "Running SAM commands"
 if [ "$INPUT_SAM_COMMAND" == "build" ]; then
 		echo "Running sam build"
