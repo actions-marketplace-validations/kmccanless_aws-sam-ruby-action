@@ -25,11 +25,11 @@ if [ -z "$STACK_NAME" ] && ["$INPUT_SAM_COMMAND" == "deploy"]; then
     echo "Stack Name Invalid"
     exit 1
 fi
-if [[ -z "$S3_BUCKET" ]]; then
+if [ -z "$S3_BUCKET" ] && ["$INPUT_SAM_COMMAND" == "deploy"]; then
     echo "S3 Bucket Invalid"
     exit 1
 fi
-if [[ -z "$CAPABILITIES" ]]; then
+if [ -z "$CAPABILITIES" ] && ["$INPUT_SAM_COMMAND" == "deploy"]; then
     echo "Capabilities Invalid"
     exit 1
 fi
