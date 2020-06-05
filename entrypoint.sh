@@ -8,12 +8,12 @@ if [ -z "$INPUT_SAM_COMMAND" ]; then
     exit 1
 fi
 
-if [[ -z "$AWS_ACCESS_KEY_ID" ]]; then
+if [ -z "$AWS_ACCESS_KEY_ID" ]; then
     echo "AWS Access Key ID invalid"
     exit 1
 fi
 
-if [[ -z "$AWS_SECRET_ACCESS_KEY" ]]; then
+if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
     echo "AWS Secret Access Key invalid"
     exit 1
 fi
@@ -38,13 +38,12 @@ echo "setting up ruby"
 exec $SHELL -l
 rbenv local 2.7.0
 
-cd
-if [ "${INPUT_SAM_COMMAND}" == "build" ]; then
+if [ "$INPUT_SAM_COMMAND" == "build" ]; then
 		echo "Running sam build"
 		sam build
 fi
 
-if [ "${INPUT_SAM_COMMAND}" == "deploy" ]; then
+if [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
 		echo "Running sam build"
-		sam deploy --stack-name "${STACK_NAME}" --s3-bucket "${S3_BUCKET}" --capabilities "${CAPABILITIES}" --no-fail-on-empty-changeset
+		sam deploy --stack-name "$STACK_NAME" --s3-bucket "$S3_BUCKET" --capabilities "$CAPABILITIES" --no-fail-on-empty-changeset
 fi
