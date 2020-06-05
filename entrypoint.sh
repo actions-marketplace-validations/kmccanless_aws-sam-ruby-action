@@ -42,7 +42,7 @@ cd "$GITHUB_WORKSPACE"
 echo "Running SAM commands"
 if [ "$INPUT_SAM_COMMAND" == "build" ]; then
 		echo "Running sam build"
-		sam build --debug --base-dir "$GITHUB_WORKSPACE"
+		sam build --debug
 fi
 
 if [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
