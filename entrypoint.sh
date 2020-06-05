@@ -36,17 +36,13 @@ if [ -z "$CAPABILITIES" ] && [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
 fi
 echo "setting up ruby"
 PATH=$PATH:~/.rbenv/shims
-echo ruby --version
 echo "PWD is $PWD"
-for entry in "$PWD"/*
-do
-  echo "$entry"
-done
+echo "contents is $(ls)"
 cd "$GITHUB_WORKSPACE"
 echo "Running SAM commands"
 if [ "$INPUT_SAM_COMMAND" == "build" ]; then
 		echo "Running sam build"
-		sam build
+		sam build --debug --base-dir "$GITHUB_WORKSPACE"
 fi
 
 if [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
