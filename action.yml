@@ -10,5 +10,5 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'kmccanless/aws-sam-ruby-2-7:1.2'
+  image: 'docker://kmccanless/aws-sam-ruby-2-7:1.2'
   entrypoint: './entrypoint.sh'
