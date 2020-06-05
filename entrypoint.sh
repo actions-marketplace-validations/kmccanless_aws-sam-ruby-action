@@ -38,7 +38,10 @@ echo "setting up ruby"
 PATH=$PATH:~/.rbenv/shims
 echo ruby --version
 echo "PWD is $PWD"
-echo "contents is $(ls)"
+for entry in "$PWD"/*
+do
+  echo "$entry"
+done
 cd "$GITHUB_WORKSPACE"
 echo "Running SAM commands"
 if [ "$INPUT_SAM_COMMAND" == "build" ]; then
