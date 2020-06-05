@@ -1,0 +1,13 @@
+name: 'AWS SAM Ruby 2.7 Github Action'
+description: 'Build and Deploy Ruby 2.7 Serverless Apps using GitHub Actions.'
+author: 'kmccanless'
+branding:
+  icon: 'terminal'
+  color: 'blue'
+inputs:
+  sam_command:
+    description: 'AWS SAM subcommand to execute.'
+    required: true
+runs:
+  using: 'docker'
+  image: './Dockerfile'
