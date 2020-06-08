@@ -23,14 +23,17 @@ if [[ -z "$AWS_REGION" ]]; then
     echo "AWS Region invalid"
     exit 1
 fi
+
 if [ -z "$STACK_NAME" ] && [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
     echo "Stack Name Invalid"
     exit 1
 fi
+
 if [ -z "$S3_BUCKET" ] && [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
     echo "S3 Bucket Invalid"
     exit 1
 fi
+
 if [ -z "$CAPABILITIES" ] && [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
     echo "Capabilities Invalid"
     exit 1
@@ -45,6 +48,6 @@ if [ "$INPUT_SAM_COMMAND" == "build" ]; then
 fi
 
 if [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
-		echo "Running sam build"
-		sam deploy --stack-name "$STACK_NAME" --s3-bucket "$S3_BUCKET" --debug --capabilities "$CAPABILITIES" --region "$AWS_REGION" --no-fail-on-empty-changeset
+		echo "Running sam deploy for $STACK_NAME in region $AWS_REGION"
+		sam deploy --stack-name "$STACK_NAME" --s3-bucket "$S3_BUCKET"--region "$AWS_REGION" --capabilities "$CAPABILITIES" --no-fail-on-empty-changeset --debug
 fi
