@@ -46,5 +46,5 @@ fi
 
 if [ "$INPUT_SAM_COMMAND" == "deploy" ]; then
 		echo "Running sam build"
-		sam deploy --stack-name "$STACK_NAME" --s3-bucket "$S3_BUCKET" --capabilities "$CAPABILITIES" --no-fail-on-empty-changeset
+		sam deploy --stack-name "$STACK_NAME" --s3-bucket "$S3_BUCKET" --capabilities "$CAPABILITIES" --region "$AWS_REGION" --no-fail-on-empty-changeset
 fi
