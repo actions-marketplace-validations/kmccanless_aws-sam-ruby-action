@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Validating inputs"
+echo "Validating inputs for AWS SAM"
 
 if [ -z "$INPUT_SAM_COMMAND" ]; then
     echo "AWS SAM command invalid"
@@ -41,7 +41,9 @@ fi
 echo "setting up ruby"
 PATH=$PATH:~/.rbenv/shims
 gem install bundler
+
 echo "Running SAM commands"
+
 if [ "$INPUT_SAM_COMMAND" == "build" ]; then
 		echo "Running sam build"
 		sam build --debug
